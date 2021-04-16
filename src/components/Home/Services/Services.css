@@ -1,0 +1,8 @@
+.card-style{
+    width: 300px;
+    margin: 10px 0px;
+    padding: 20px;
+    box-shadow: 5px 5px 20px #888888;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+}

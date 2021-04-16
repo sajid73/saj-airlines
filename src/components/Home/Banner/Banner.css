@@ -1,0 +1,27 @@
+body{
+    background-image: url(../../../images/bg.jfif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.banner-section{
+    height: 120vh;
+    width: 100vw;
+    margin: 2% auto;
+    text-align: center;
+}
+.booking{
+    width: 70%;
+    margin: auto;
+    padding: 2%;
+    border-radius: 1rem;
+    background: linear-gradient(#207cca, #7db9e8);
+}
+.input-box{
+    width: 75%;
+    margin: 2% auto;
+}
+@media only screen and (max-width: 600px) {
+    .banner-section{
+        height: 150vh;
+    }
+  }
