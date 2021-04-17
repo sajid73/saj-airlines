@@ -8,6 +8,7 @@ import WriteReview from "./components/Home/WriteReview/WriteReview";
 import Dashboard from "./components/Dashboard/Dashboard";
 import { createContext, useState } from "react";
 import PrivateRoute from "./components/Shared/PrivateRoute/PrivateRoute";
+import Checkout from "./components/Shared/Checkout/Checkout";
 
 export const UserContext = createContext();
 
@@ -34,8 +35,8 @@ function App() {
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
-            <PrivateRoute path="/dashboard">
-              <Dashboard></Dashboard>
+            <PrivateRoute path="/services/:serviceid">
+              <Checkout></Checkout>
             </PrivateRoute>
           </Switch>
           <Footer></Footer>

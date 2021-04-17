@@ -10,6 +10,8 @@ import WriteReview from '../Home/WriteReview/WriteReview';
 import { UserContext } from '../../App';
 import AddServices from './AddServices';
 import ManageServices from './ManageServices';
+import Services from '../Home/Services/Services';
+import Bookingslist from './Bookingslist';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -92,15 +94,28 @@ const Dashboard = () => {
             isAdmin && <Tab label="Manage Services" {...a11yProps(6)} />
         }
       </Tabs>
-      <TabPanel value={value} index={0}>
-        Item Two
+
+      {
+        isAdmin ? <TabPanel value={value} index={0}>
+        This section is for users only
+      </TabPanel> : <TabPanel value={value} index={0}>
+        <Services></Services>
       </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item One
+      }
+      {
+        isAdmin ? <TabPanel value={value} index={1}>
+        This section is for users only
+      </TabPanel> : <TabPanel value={value} index={1}>
+        <Bookingslist></Bookingslist>
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      }
+      {
+        isAdmin ? <TabPanel value={value} index={2}>
+        This section is for users only
+        </TabPanel> : <TabPanel value={value} index={2}>
       <WriteReview></WriteReview>
       </TabPanel>
+      }
       {
           isAdmin && <TabPanel value={value} index={3}>
           Item Four
