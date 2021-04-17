@@ -1,10 +1,13 @@
-import { Container } from '@material-ui/core';
-import React from 'react';
+import {  Container } from '@material-ui/core';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../App';
 import icon from '../../../images/meat.png'
 import './Navbar.css'
 
 const Navbar = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const {signed, displayName} = loggedInUser;
     return (
         <div>
             <Container>
@@ -26,10 +29,14 @@ const Navbar = () => {
               <Link className="nav-link me-4 link" to="#destinations">Destinations</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link me-4 link" to="#reviews">Reviews</Link>
+              <Link className="nav-link me-4 link" to="/dashboard">Dashboard</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link me-4 link" to="/login">Login</Link>
+              <Link className="nav-link me-4 link" to="/login">
+                {
+                  signed ? <span><img width="30px" src={loggedInUser.photoURL} style={{borderRadius: '50%'}}></img> {loggedInUser.displayName}</span> : 'Log in'
+                }
+              </Link>
             </li>
           </ul>
           </div>

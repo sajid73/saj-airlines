@@ -19,7 +19,7 @@ const places = [
 
 const Destinations = () => {
     return (
-        <div className= "container container-div">
+        <div className= "container container-div mt-5 mb-5">
             <h1>Our Destinations</h1>
             <div className="row justify-content-around">
             {

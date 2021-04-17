@@ -7,6 +7,7 @@ const Banner = () => {
         <div className="banner-section img-fluid p-3">
             <container className="row">
             <div className="col-md-6 p-3">
+                {/* This is a dummy booking form */}
                 <div className="booking">
                     <h2>Book a flight</h2>
                     <input type="text" className="form-control input-box" placeholder="Flying from airport . . . " /> 

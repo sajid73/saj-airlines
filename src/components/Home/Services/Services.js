@@ -1,31 +1,29 @@
-import React from 'react';
-import pj from '../../../images/privatejet.jfif'
-import bj from '../../../images/businessjet.jfif'
-import hs from '../../../images/helicopter.jfif'
-import at from '../../../images/air taxi.jfif'
+import { Button } from '@material-ui/core';
+import React, { useState } from 'react';
 import './Services.css'
 
 const Services = () => {
+    const [services, setServices] = useState([]);
+    fetch('https://thawing-earth-88805.herokuapp.com/services')
+    .then(res => res.json())
+    .then(data => {
+        setServices(data);
+    })
     return (
         <div className="service-section container">
             <h1>Our Services</h1>
             <div className="justify-content-around row">
-            <div className="col-md-3 card-style">
-                <h3>Private Jet</h3>
-                <img width="250px" height="200px" src={pj} alt=""/>
-            </div>
-            <div className="col-md-3 card-style">
-                <h3>Business Jet</h3>
-                <img width="250px" height="200px" src={bj} alt=""/>
-            </div>
-            <div className="col-md-3 card-style">
-                <h3>Helicopter Service</h3>
-                <img width="250px" height="200px" src={hs} alt=""/>
-            </div>
-            <div className="col-md-3 card-style">
-                <h3>Air Texi</h3>
-                <img width="250px" height="200px" src={at} alt=""/>
-            </div>
+               {
+                   services.map(service => <div className="col-md-3 card-style">
+                       <h3>{service.title}</h3>
+                       <img src={service.imgURL} width="250px" height="200" alt=""/>
+                       <div className="justify-content-around row mt-3">
+                           <span className="col-md-6 mt-1">${service.price}</span>
+                           <Button size="small" className="col-md-6" variant="contained">Book now</Button>
+                       </div>
+                       </div>
+                       )
+               }
             </div>
         </div>
     );

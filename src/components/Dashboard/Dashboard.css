@@ -1,0 +1,9 @@
+.error{
+    color: red;
+    font-family: cursive;
+}
+.waiting{
+    color: rgb(150, 79, 37);
+    font-weight: bold;
+    font-style: italic;
+}
