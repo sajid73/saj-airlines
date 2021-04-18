@@ -11,9 +11,9 @@ const Footer = () => {
                     <div className="col-sm-4 col-md-3 item">
                         <h3>Services</h3>
                         <ul>
-                            <li><a href="/">Web design</a></li>
-                            <li><a href="/">Development</a></li>
-                            <li><a href="/">Hosting</a></li>
+                            <li><a href="/">Air ambulance</a></li>
+                            <li><a href="/">Helicopter</a></li>
+                            <li><a href="/">Instant jet</a></li>
                         </ul>
                     </div>
                     <div className="col-sm-4 col-md-3 item">

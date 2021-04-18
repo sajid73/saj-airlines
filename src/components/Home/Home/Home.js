@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
+import CustomService from '../CustomService/CustomService';
 import Destinations from '../Destinations/Destinations';
 import Reviews from '../Reviews/Reviews';
 import Services from '../Services/Services';
@@ -12,6 +13,8 @@ const Home = () => {
             <Services></Services>
             <Destinations></Destinations>
             <Reviews></Reviews>
+            {/* bonus sectino */}
+            <CustomService></CustomService>
         </div>
     );
 };
