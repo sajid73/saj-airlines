@@ -28,7 +28,7 @@ const Reviews = () => {
                 }
                 
             </div>
-            <Link style={{textDecoration: 'none'}} to="/dashboard"><Button variant="contained" color="secondary">Write a review</Button></Link>
+            <Link style={{textDecoration: 'none'}} to="/review"><Button variant="contained" color="secondary">Write a review</Button></Link>
         </div>
     );
 };

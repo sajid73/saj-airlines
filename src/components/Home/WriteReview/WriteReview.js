@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { UserContext } from '../../../App';
+import Dashboard from '../../Dashboard/Dashboard';
 import './WriteReview.css'
 
 const WriteReview = () => {
@@ -15,7 +16,11 @@ const WriteReview = () => {
         })
     };
     return (
-        <div>
+        <div className="row">
+            <div className="col-md-4">
+                <Dashboard></Dashboard>
+            </div>
+            <div className="col-md-5">
             <form onSubmit={handleSubmit(onSubmit)}>
       
       <input className="input-field" placeholder="Share your experience" {...register("reviewbyuser", { required: true })} /> <br/>
@@ -23,6 +28,7 @@ const WriteReview = () => {
       
       <input className="input-field" style={{backgroundColor: 'darkorange'}} type="submit" />
     </form>
+            </div>
         </div>
     );
 };

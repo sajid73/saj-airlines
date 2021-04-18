@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Button } from '@material-ui/core';
+import Dashboard from '../Dashboard';
 
 const useStyles = makeStyles({
     table: {
@@ -33,7 +34,11 @@ const ManageServices = () => {
     const classes = useStyles();
     fetch('')
     return (
-        <div>
+        <div className="row">
+            <div className="col-md-3 col-sm-2">
+              <Dashboard></Dashboard>
+            </div>
+            <div className="col-md-7">
             <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
@@ -61,6 +66,7 @@ const ManageServices = () => {
         </TableBody>
       </Table>
     </TableContainer>
+            </div>
         </div>
     );
 };

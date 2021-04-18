@@ -34,7 +34,7 @@ const Navbar = () => {
             <li className="nav-item">
               <Link className="nav-link me-4 link" to="/login">
                 {
-                  signed ? <span><img width="30px" src={loggedInUser.photoURL} style={{borderRadius: '50%'}}></img> {loggedInUser.displayName}</span> : 'Log in'
+                  signed ? <span><img width="30px" src={loggedInUser.photoURL} style={{borderRadius: '50%'}} alt="profile"></img> {loggedInUser.displayName}</span> : 'Log in'
                 }
               </Link>
             </li>

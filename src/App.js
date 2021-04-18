@@ -9,6 +9,12 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import { createContext, useState } from "react";
 import PrivateRoute from "./components/Shared/PrivateRoute/PrivateRoute";
 import Checkout from "./components/Shared/Checkout/Checkout";
+import Bookingslist from "./components/Dashboard/Bookinglist.js/Bookingslist";
+import AddServices from "./components/Dashboard/AddService/AddServices";
+import MakeAdmin from "./components/Dashboard/MakeAdmin/MakeAdmin";
+import ManageServices from "./components/Dashboard/ManageService/ManageServices";
+import OrderedList from "./components/Dashboard/OrderedList/OrderedList";
+import Services from "./components/Home/Services/Services";
 
 export const UserContext = createContext();
 
@@ -33,10 +39,30 @@ function App() {
               <Login></Login>
             </Route>
             <PrivateRoute path="/dashboard">
-              <Dashboard></Dashboard>
+              {
+                loggedUser.isAdmin ? <OrderedList></OrderedList> : <Bookingslist></Bookingslist>
+              }
+            </PrivateRoute>
+            <PrivateRoute path="/book">
+              <Services></Services>
             </PrivateRoute>
             <PrivateRoute path="/services/:serviceid">
               <Checkout></Checkout>
+            </PrivateRoute>
+            <PrivateRoute path="/review">
+              <WriteReview></WriteReview>
+            </PrivateRoute>
+            <PrivateRoute path="/makeadmin">
+              <MakeAdmin></MakeAdmin>
+            </PrivateRoute>
+            <PrivateRoute path="/addservice">
+              <AddServices></AddServices>
+            </PrivateRoute>
+            <PrivateRoute path="/manageservices">
+              <ManageServices></ManageServices>
+            </PrivateRoute>
+            <PrivateRoute path="/orderlist">
+              <OrderedList></OrderedList>
             </PrivateRoute>
           </Switch>
           <Footer></Footer>

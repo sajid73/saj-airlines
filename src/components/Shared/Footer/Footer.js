@@ -1,51 +1,46 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
+import './Footer.css'
 
-function Copyright() {
+const Footer = () => {
   return (
-    <Typography variant="body2" color="textSecondary">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh',
-  },
-  main: {
-    marginTop: theme.spacing(8),
-    marginBottom: theme.spacing(2),
-  },
-  footer: {
-    padding: theme.spacing(3, 2),
-    marginTop: 'auto',
-    backgroundColor:
-      theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
-  },
-}));
-
-export default function Footer() {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-      <footer className={classes.footer}>
-        <Container maxWidth="sm">
-          <Typography variant="body1">My sticky footer can be found here.</Typography>
-          <Copyright />
-        </Container>
-      </footer>
+    <div className="mt-5">
+      <div className="footer-clean">
+        <footer>
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-sm-4 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="/">Web design</a></li>
+                            <li><a href="/">Development</a></li>
+                            <li><a href="/">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div className="col-sm-4 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="/">Company</a></li>
+                            <li><a href="/">Team</a></li>
+                            <li><a href="/">Legacy</a></li>
+                        </ul>
+                    </div>
+                    <div className="col-sm-4 col-md-3 item">
+                        <h3>Careers</h3>
+                        <ul>
+                            <li><a href="/">Job openings</a></li>
+                            <li><a href="/">Employee success</a></li>
+                            <li><a href="/">Benefits</a></li>
+                        </ul>
+                    </div>
+                    <div className="col-lg-3 item social"><a href="/"><i className="icon ion-social-facebook"></i></a><a href="/"><i className="icon ion-social-twitter"></i></a><a href="/"><i className="icon ion-social-snapchat"></i></a><a href="/"><i className="icon ion-social-instagram"></i></a>
+                        <p className="copyright">SAJ Airlines © 2021</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
     </div>
   );
-}
+};
+
+export default Footer;
